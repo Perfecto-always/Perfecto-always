@@ -1,0 +1,4 @@
+node_modules
+/dist
+/styles/index.css
+/styles/index.css.map
