@@ -3,9 +3,7 @@ import anime from "animejs";
 export default class header {
   done = false;
 
-  constructor(public node: Element) {
-    console.log(node);
-  }
+  constructor(public node: Element) {}
 
   _Header = new IntersectionObserver(([node]) => {
     if (this.done === true) return;
