@@ -1,3 +1,4 @@
+import "./style.scss";
 import anime from "animejs";
 import Letterize from "letterizejs";
 import Header from "./header";
