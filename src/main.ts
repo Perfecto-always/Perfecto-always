@@ -17,18 +17,18 @@ const tl = anime.timeline({
   delay: anime.stagger(30),
   duration: 750,
   complete: () => {
-    tl2.add({ opacity: 1 });
+    tl2.add({ translateY: -10, opacity: 1 });
   },
 });
 
-tl.add({ translateY: 40, opacity: 0 }, "-=1000").add({
+tl.add({ translateY: 50, opacity: 0 }, "-=1000").add({
   translateY: 0,
   opacity: 1,
 });
 
 const tl2 = anime.timeline({
   targets: word2.listAll,
-  delay: anime.stagger(10),
+  delay: anime.stagger(15),
 });
 
 /**
@@ -70,3 +70,32 @@ menu?.addEventListener(
   },
   false
 );
+
+/**
+ * Code for animated background
+ */
+
+const blob = document.getElementById("Ellipse 30")!;
+const blob2 = document.getElementById("Ellipse 38")!;
+
+anime({
+  targets: blob,
+  delay: 3000,
+  translateX: [0, window.innerWidth],
+  translateY: [0, window.innerHeight],
+  duration: 25000,
+  direction: "alternate",
+  easing: "linear",
+  loop: true,
+});
+
+anime({
+  targets: blob2,
+  delay: 100,
+  translateX: [0, -window.innerWidth],
+  translateY: [0, window.innerHeight],
+  duration: 20000,
+  direction: "alternate",
+  easing: "linear",
+  loop: true,
+});
