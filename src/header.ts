@@ -13,7 +13,7 @@ export default class header {
         translateY: [50, 0],
         opacity: [0, 1],
         update: () => {
-          // this._Header.unobserve(node.target);
+          this._Header.unobserve(node.target);
         },
       });
     }
