@@ -219,6 +219,7 @@ section {
         color: var(--text-primary);
     }
     .card {
+        cursor: pointer;
         z-index: 99;
         border: 2px solid;
         border-image-slice: 1;
