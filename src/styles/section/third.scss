@@ -1,6 +1,6 @@
 @use "../component/card";
 .third {
-    background-image: url("src/assets/pattern.svg");
+    background-image: url("/src/assets/pattern.svg");
     background-repeat: repeat-y;
     .projects {
         display: grid;
