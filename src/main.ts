@@ -95,7 +95,6 @@ for (let i = 0; i < projects.length; i++) {
   const div = document.createElement("div");
 
   const technologies = document.createElement("div");
-  const span = document.createElement("span");
 
   if (projects[i].link) {
     a.href = projects[i].link!;
