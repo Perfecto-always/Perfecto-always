@@ -1,0 +1,37 @@
+.second {
+    .holder {
+        margin: 0 5px;
+        display: flex;
+        @media screen and (max-width: 768px) {
+            flex-direction: column-reverse;
+            margin: 0;
+        }
+        p {
+            max-width: 60ch;
+            @media screen and (max-width: 768px) {
+                max-width: auto;
+            }
+        }
+        ul {
+            display: grid;
+            margin-top: 0.5rem;
+            grid-template-columns: 2fr 2fr;
+            max-width: 60ch;
+            @media screen and (max-width: 768px) {
+                max-width: auto;
+            }
+            li {
+                list-style: none;
+            }
+        }
+        img {
+            @media screen and (max-width: 768px) {
+                margin: 0 auto;
+                height: auto;
+            }
+            @media screen and (max-width: 412px) {
+                width: 260px;
+            }
+        }
+    }
+}

@@ -1,0 +1,6 @@
+    <svg width="1512" height="60"  xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M0 60C0 26.8629 26.8629 0 60 0H1452C1485.14 0 1512 26.8629 1512 60V60H0V60Z"
+        fill="#000"
+      />
+    </svg>

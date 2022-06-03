@@ -1,0 +1,17 @@
+@use "../variables";
+section {
+    background-color: variables.$primary-background-color;
+    padding-block: 10rem;
+    scroll-snap-align: start;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media screen and (max-width: 640px) {
+        width: 100%;
+        padding-inline: 1rem;
+    }
+    h2>a {
+        font-size: 0;
+    }
+}

@@ -1,0 +1,21 @@
+@use "../component/card";
+.third {
+    background-image: url("src/assets/pattern.svg");
+    background-repeat: repeat-y;
+    .projects {
+        display: grid;
+        grid-row: auto;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2rem;
+        @media screen and (max-width: 1240px) {
+            grid-template-columns: 1fr 1fr;
+        }
+        @media screen and (max-width: 768px) {
+            grid-template-columns: 1fr;
+        }
+    }
+    a {
+        text-decoration: none;
+        color: var(--text-primary);
+    }
+}

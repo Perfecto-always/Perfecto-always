@@ -1,0 +1,10 @@
+@mixin header($size) {
+    font-size: $size;
+    font-family: "Playfair Display", serif;
+    text-align: center;
+    margin-block: 1rem;
+    font-weight: 900;
+    @media screen and (max-width: 640px) {
+        font-size: calc($size - 0.5rem);
+    }
+}

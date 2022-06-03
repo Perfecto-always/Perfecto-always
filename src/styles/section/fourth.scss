@@ -1,0 +1,71 @@
+@use "../variables";
+.fourth {
+    .holder {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    background-color: #121212;
+    color: white;
+    form {
+        display: flex;
+        flex-direction: column;
+        label {
+            margin-block: 0.3rem;
+        }
+        input {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(100px);
+            width: 50ch;
+            border: none;
+            padding: 2rem;
+            height: 2rem;
+            border-radius: 5px;
+            color: var(--text-primary);
+            @media screen and (max-width: 640px) {
+                width: 100%;
+            }
+        }
+        textarea {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(100px);
+            border: none;
+            color: var(--text-primary);
+            border-radius: 5px;
+            -webkit-appearance: textfield;
+            -moz-appearance: textfield;
+            width: 50ch;
+            padding: 2rem;
+            min-height: 2rem;
+            resize: vertical;
+            font-style: normal;
+            font-family: sans-serif;
+            @media screen and (max-width: 640px) {
+                width: 100%;
+            }
+        }
+        button {
+            cursor: pointer;
+            background: variables.$primary-color;
+            padding: 1rem 2rem;
+            color: white;
+            border: none;
+            margin-block: 1rem;
+            border-radius: 5px;
+            font-family: "Poppins", sans-serif;
+            &:hover {
+                opacity: 90%;
+            }
+        }
+    }
+    div {
+        @media screen and (max-width: 640px) {
+            width: 100%;
+        }
+    }
+    img {
+        @media screen and (max-width: 931px) {
+            display: none;
+        }
+    }
+}

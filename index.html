@@ -27,13 +27,18 @@
 </head>
 
 <body>
-    <nav class="print-none">
+    <nav id="nav">
         <button class="menu" aria-label="Main Menu" id="menu-toggle">
         <!--   Courtesy of Mikael Ainalem for animated
                hamburger. Here is the codepen for his work:
                https://codepen.io/ainalem/pen/wvKOEMV?editors=1000
           -->
-        <svg width="32" height="32" viewBox="0 0 100 100">
+        <svg
+          width="32"
+          height="32"
+          viewBox="0 0 100 100"
+          style="background-color: #8f00ff"
+        >
           <path
             class="line line1"
             d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"
@@ -45,218 +50,62 @@
           />
         </svg>
       </button>
-        <ul id="navitems">
+        <ul id="navitems" class="list">
             <li><a href="#">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
-    <div class="blob">
-        <svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" fill="none">
-        <g id="Desktop - 7" clip-path="url(#clip0_311_44)">
-          <rect width="1920" height="1080" fill="black" />
-          <circle
-            id="Ellipse 30"
-            cx="103.996"
-            cy="132.962"
-            r="264.307"
-            fill="#ff9000"
-          />
-          <circle
-            id="Ellipse 31"
-            cx="1500.28"
-            cy="600"
-            r="114.295"
-            fill="#ff9000"
-          />
-          <circle
-            id="Ellipse 32"
-            cx="701.189"
-            cy="1024"
-            r="110.009"
-            fill="#ff9000"
-          />
-          <circle
-            id="Ellipse 35"
-            cx="748.454"
-            cy="260.67"
-            r="28.4543"
-            fill="#ff9000"
-          />
-          <circle
-            id="Ellipse 36"
-            cx="1292.06"
-            cy="860.088"
-            r="17.9679"
-            fill="#ff9000"
-          />
-          <circle
-            id="Ellipse 37"
-            cx="121.964"
-            cy="896.023"
-            r="17.9679"
-            fill="#ff9000"
-          />
-          <circle
-            id="Ellipse 34"
-            cx="284.012"
-            cy="621.186"
-            r="47.1465"
-            fill="#ff9000"
-          />
-          <circle
-            id="Ellipse 33"
-            cx="1831.28"
-            cy="67.678"
-            r="114.295"
-            fill="#ff9000"
-          />
-          <circle
-            id="Ellipse 38"
-            cx="1159.8"
-            cy="132.962"
-            r="114.295"
-            fill="#ff9000"
-          />
-          <circle
-            id="Ellipse 39"
-            cx="1599.83"
-            cy="541.179"
-            r="80.0063"
-            fill="#ff9000"
-          />
-        </g>
-        <defs>
-          <clipPath id="clip0_311_44">
-            <rect width="1920" height="1080" fill="white" />
-          </clipPath>
-        </defs>
-      </svg>
-    </div>
-    <div class="blur">
-        <section class="first">
-            <div class="first-content">
-                <h1 id="hero-title">Hi, I'm Harsh Bararia</h1>
-                <p id="hero-subtitle">A full-stack web developer.</p>
-            </div>
-        </section>
-        <section class="second">
+    <section class="first">
+        <div>
+            <h1 id="hero-title">Hi, I'm Harsh Bararia</h1>
+            <p id="hero-subtitle">A full-stack web developer.</p>
+        </div>
+    </section>
+    <section class="second">
+        <div class="holder">
             <div>
                 <h2 id="second-title">
-                    About
-                    <a id="about"></a>
+                    <a id="about" style="padding-top: 10rem"> &#35; </a> About
                 </h2>
                 <p>
                     I'm a self taught full-stack web developer. I am from India, currently studying in St. Xavier's College based in Kolkata. I'm developing since 2020 and its my passion to write code. And will sure be a valuable asset to any company. I like to learn, get
                     through challenging situations. Never gonna give(you) up. Never gonna let you(company) down.
                 </p>
-                <h3>Technologies I know</h3>
+                <br />
+                <p>Here are some of the technologies I currently use:</p>
                 <ul>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>JAVASCRIPT</li>
-                    <li>REACT</li>
-                    <li>TYPESCRIPT</li>
-                    <li>MONGO DB</li>
-                    <li>SQL</li>
-                    <li>FIGMA</li>
+                    <li>Html</li>
+                    <li>Css</li>
+                    <li>Javascript</li>
+                    <li>React</li>
+                    <li>Typescript</li>
+                    <li>MongoDb</li>
+                    <li>Node.js</li>
+                    <li>Scss</li>
                 </ul>
             </div>
-        </section>
-        <section class="third">
+            <img src="/src/assets/about.svg" width="400" height="400" alt="About me illustration" />
+        </div>
+    </section>
+    <section class="third">
+        <div class="holder">
+            <h2 id="third-title">
+                <a id="projects" style="padding-top: 10rem"> &#35; </a>Projects
+            </h2>
+
+            <div class="projects" id="project-holder"></div>
+        </div>
+    </section>
+    <section class="fourth">
+        <div class="holder">
+            <img src="/src/assets/contact.svg" width="400" height="400" alt="A guy holding his arm above its heart" />
             <div>
-                <h2 id="third-title">Projects</h2>
-                <a id="projects"> </a>
-                <div class="projects">
-                    <a class="card" href="https://meme-generation.netlify.app" target="_blank">
-                        <h3>
-                            Meme Generator
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white">
-                  <path
-                    d="m13 3 3.293 3.293-7 7 1.414 1.414 7-7L21 11V3z"
-                  ></path>
-                  <path
-                    d="M19 19H5V5h7l-2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2v-5l-2-2v7z"
-                  ></path>
-                </svg>
-                        </h3>
-                        <p>
-                            A classic meme generator that fetches meme templates from an api and stores it in a variable. A randomizer function is then used to show the meme to the user.
-                        </p>
-                    </a>
-                    <a class="card" href="https://kmtextiles.netlify.app" target="_blank">
-                        <h3>
-                            E Commerce Application
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white">
-                  <path
-                    d="m13 3 3.293 3.293-7 7 1.414 1.414 7-7L21 11V3z"
-                  ></path>
-                  <path
-                    d="M19 19H5V5h7l-2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2v-5l-2-2v7z"
-                  ></path>
-                </svg>
-                        </h3>
-                        <p>
-                            An E-Commerce website. Browse through the catalogue and if you want to buy can contact seller by sending them and email
-                        </p>
-                    </a>
-                    <div class="card">
-                        <h3>
-                            Chat Application
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white">
-                  <path
-                    d="m13 3 3.293 3.293-7 7 1.414 1.414 7-7L21 11V3z"
-                  ></path>
-                  <path
-                    d="M19 19H5V5h7l-2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2v-5l-2-2v7z"
-                  ></path>
-                </svg>
-                        </h3>
-                        <p>
-                            A full stack chat application created using MERN Stack. You can also search through massive collection of spotify albums and playlist and play music.
-                        </p>
-                    </div>
-                    <div class="card">
-                        <h3>
-                            Social Media
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white">
-                  <path
-                    d="m13 3 3.293 3.293-7 7 1.414 1.414 7-7L21 11V3z"
-                  ></path>
-                  <path
-                    d="M19 19H5V5h7l-2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2v-5l-2-2v7z"
-                  ></path>
-                </svg>
-                        </h3>
-                        <p>
-                            A social media website but doesn't have the very essence (cannot talk to others) of it. Because it is not meant to be one. You can share your taughts and feelings with the world.
-                        </p>
-                    </div>
-                    <a class="card" href="https://face-reveal.netlify.app" target="_blank">
-                        <h3>
-                            Unknown Project
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white">
-                  <path
-                    d="m13 3 3.293 3.293-7 7 1.414 1.414 7-7L21 11V3z"
-                  ></path>
-                  <path
-                    d="M19 19H5V5h7l-2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2v-5l-2-2v7z"
-                  ></path>
-                </svg>
-                        </h3>
-                        <p>
-                            Go ahead and explore it yourself what the project beholds for you. I am sure you won't be disappointed by this one atleast.
-                        </p>
-                    </a>
-                </div>
-            </div>
-        </section>
-        <section class="fourth print-none">
-            <div>
-                <a id="contact">
-                    <h2 title="fourth-title">Contact</h2>
-                </a>
+                <h2 id="fourth-title">
+                    <a id="contact" style="padding-top: 10rem"> &#35; </a>Contact
+                </h2>
+
                 <form name="Contact" netlify data-netlify="true" method="post">
                     <label for="name">
               Name: <br />
@@ -311,7 +160,7 @@
                 />
               </svg>
                     </a>
-                    <a id="resume" href="/resume.pdf" download=""><svg
+                    <a id="resume" href="/src/resume.pdf" download=""><svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
@@ -326,8 +175,8 @@
             </a>
                 </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
     <script type="module" src="/src/main.ts"></script>
 </body>
 

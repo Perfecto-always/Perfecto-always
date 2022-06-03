@@ -1,7 +1,8 @@
-import "./style.scss";
+import "./styles/index.scss";
 import anime from "animejs";
-import Letterize from "letterizejs";
-import Header from "./header";
+import Header from "./header.animate";
+import Letter from "./utils/Letter";
+import { projects } from "./projects";
 
 /**
  * For first section
@@ -9,62 +10,72 @@ import Header from "./header";
 const title = document.getElementById("hero-title")!;
 const subtitle = document.getElementById("hero-subtitle")!;
 
-const word = new Letterize({ targets: title });
-const word2 = new Letterize({ targets: subtitle, wrapper: "p" });
+const word1 = new Letter(title);
+const word2 = new Letter(subtitle);
 
 const tl = anime.timeline({
-  targets: word.listAll,
-  delay: anime.stagger(30),
-  duration: 750,
+  targets: word1.listAll,
+  delay: function (_, i) {
+    return i * 100;
+  },
+  easing: "easeOutExpo",
   complete: () => {
-    tl2.add({ translateY: -10, opacity: 1 });
+    tl2.play();
   },
 });
 
-tl.add({ translateY: 50, opacity: 0 }, "-=1000").add({
-  translateY: 0,
-  opacity: 1,
+tl.add({
+  translateY: [50, 0],
+  opacity: [0, 1],
 });
 
 const tl2 = anime.timeline({
   targets: word2.listAll,
-  delay: anime.stagger(15),
+  delay: anime.stagger(30),
+  elasticity: 0,
+});
+
+tl2.add({ translateY: 10, opacity: 0 }).add({
+  translateY: 0,
+  opacity: 1,
 });
 
 /**
- * For second section
+ * For other sections
  */
 
-const second = document.getElementById("second-title")!;
-const third = document.getElementById("third-title")!;
-new Header(second).ob();
-new Header(third).ob();
+const holders = document.querySelectorAll(".holder");
+
+holders.forEach((holder) => {
+  new Header(holder).ob();
+});
 
 /**
  * Code for responsive navbar
  */
-const menu = document.getElementById("menu-toggle");
-const navitems = document.getElementById("navitems");
-const navitem = navitems?.children;
+const menu = document.getElementById("menu-toggle")!;
+const nav = document.getElementById("nav")!;
+const navitems = document.getElementById("navitems")!;
+const navitem = navitems.children;
+
+function toggleNav() {
+  menu.classList.toggle("opened");
+  navitems.classList.toggle("expanded");
+  document.body.classList.toggle("nav-open");
+  nav.classList.toggle("nav-open");
+}
 
 menu?.addEventListener(
   "click",
   () => {
-    menu.classList.toggle("opened");
-    navitems?.classList.toggle("expanded");
-    document.body.classList.toggle("hidden");
-    anime({
-      targets: navitems,
-      delay: 200,
-      translateX: [-100, 0],
-      opacity: [0, 1],
-    });
-
+    toggleNav();
+    // tl3.play();
     for (let i = 0; i < navitem?.length!; i++) {
       navitem?.item(i)!.addEventListener("click", () => {
         menu.classList.remove("opened");
-        navitems?.classList.remove("expanded");
-        document.body.classList.remove("hidden");
+        navitems.classList.remove("expanded");
+        document.body.classList.remove("nav-open");
+        nav.classList.remove("nav-open");
       });
     }
   },
@@ -72,30 +83,45 @@ menu?.addEventListener(
 );
 
 /**
- * Code for animated background
+ *  Code for projects section
  */
 
-const blob = document.getElementById("Ellipse 30")!;
-const blob2 = document.getElementById("Ellipse 38")!;
+const project = document.getElementById("project-holder")!;
 
-anime({
-  targets: blob,
-  delay: 3000,
-  translateX: [0, window.innerWidth],
-  translateY: [0, window.innerHeight],
-  duration: 25000,
-  direction: "alternate",
-  easing: "linear",
-  loop: true,
-});
+for (let i = 0; i < projects.length; i++) {
+  const h6 = document.createElement("h6");
+  const p = document.createElement("p");
+  const a = document.createElement("a");
+  const div = document.createElement("div");
 
-anime({
-  targets: blob2,
-  delay: 100,
-  translateX: [0, -window.innerWidth],
-  translateY: [0, window.innerHeight],
-  duration: 20000,
-  direction: "alternate",
-  easing: "linear",
-  loop: true,
-});
+  const technologies = document.createElement("div");
+  const span = document.createElement("span");
+
+  if (projects[i].link) {
+    a.href = projects[i].link!;
+    a.target = "_blank";
+  }
+
+  const parent = projects[i].link ? a : div;
+
+  parent.classList.add("card");
+  h6.innerText = projects[i].name;
+  p.innerText = projects[i].description;
+  technologies.classList.add("technologies");
+
+  let str = "";
+
+  for (let j = 0; j < projects[i].technologies.length; j++) {
+    str += String(projects[i].technologies[j] + " ");
+  }
+
+  console.log(str);
+
+  technologies.innerText = str;
+
+  parent.appendChild(h6);
+  parent.appendChild(p);
+  parent.appendChild(technologies);
+
+  project.appendChild(parent);
+}
