@@ -24,7 +24,7 @@ export const projects: ProjectType[] = [
     name: "Chat Application",
     description:
       "A full stack chat application created using MERN Stack. You can also search through massive collection of spotify albums and playlist and play music.",
-    link: "",
+    link: "https://github.com/Perfecto-always/Linkage",
     technologies: [
       "Web Socket",
       "MongoDB",
