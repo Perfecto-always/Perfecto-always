@@ -2,7 +2,7 @@
 <br />  
 Thank you for having a look at my github 🙇</h1>
 <p align="center">
-  🗣️ You can call me Perfectó or Harsh
+  🗣️ You can call me Perfectó
   <br />
   🌱 I’m currently learning how to code.
   <br />
